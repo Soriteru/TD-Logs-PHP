@@ -1,6 +1,6 @@
 <?php 
 
-function write_log($username = null, $message = "Je suis vendeur chez Carrefour"){
+function write_log($username, $message){
     $fp = fopen('app.log', 'a');
     $date = $date = date("Y-m-d H:i:s");
     if(empty($username)){
@@ -14,7 +14,5 @@ function write_log($username = null, $message = "Je suis vendeur chez Carrefour"
     fwrite($fp, "[" . $date . "]" . " - " . $username . " - " . "'" . $message . "'" .  "\n");
     fclose($fp);
 }
-
-write_log();
 
 ?>
